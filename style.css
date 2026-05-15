@@ -1,0 +1,668 @@
+:root {
+    ---primary: rgb(255, 255, 255);
+    ---heder: rgb(216, 255, 248);
+    ---secundary: blue;
+    ---letterT: #0073aa;
+    ---five: rgb(170, 170, 170);
+    ---boton: #00c853;
+    ---letter: black;
+    ---three: #0b1446;
+    ---four: #0e1958;
+    ---selection: rgba(102, 247, 247, 0.699);
+    ---transparent: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.DispoMedic {
+    overflow-x: hidden;
+    background-color: var(---primary);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+header {
+    height: 100px;
+    width: 100%;
+
+    background: var(---transparent);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* CONTENEDOR */
+.HeaderInd {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 5px 4%;
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.SecInd {
+    display: flex;
+    align-items: center;
+
+    margin-left: -60px;
+
+
+    gap: 10px;
+
+}
+
+.SecInd img {
+    width: 450px;
+
+    height: 450px;
+
+    object-fit: contain;
+}
+
+/* NAV */
+.NavInd ul {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+
+
+    list-style: none;
+}
+
+/* LINKS */
+.NavInd ul li a {
+
+    text-decoration: none;
+
+    color: var(---four);
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    padding: 12px 22px;
+
+    border-radius: 50px;
+
+    transition: .3s ease;
+}
+
+/* HOVER */
+.NavInd ul li a:hover {
+
+
+    color: var(---five);
+
+}
+
+
+
+
+/* RESPONSIVE */
+@media(max-width:950px) {
+
+    .HeaderInd {
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .NavInd ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    .NavInd ul li a {
+        padding: 10px 18px;
+        font-size: 0.95rem;
+    }
+
+    .SecInd h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+.carousel {
+    color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.contenido {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+
+}
+
+.contenido h2 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.contenido p {
+    margin: 10px 0;
+}
+
+.contenido a {
+    background: var(---boton);
+    color: var(---primary);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+Flechas */ .prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(---primary);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 0;
+    margin-top: 250px;
+    height: 10%;
+    width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.2);
+    /* transparente */
+    color: var(---primary);
+    font-size: 30px;
+
+    border: none;
+    cursor: pointer;
+
+    opacity: 0;
+    /* ocultas por defecto */
+    transition: 0.3s;
+}
+
+/* Posiciones */
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Aparecen al pasar el mouse */
+.carousel:hover .prev,
+.carousel:hover .next {
+    opacity: 1;
+}
+
+/* Hover más visible */
+.prev:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: var(---primary);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.dots .active {
+    opacity: 1;
+}
+
+#Nosotros {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px;
+    background: var(---primary);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#Nosotros h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+#Nosotros>p {
+    text-align: center;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.7;
+}
+
+/* CONTENEDORES */
+.Mision,
+.Vision,
+.Politica {
+    display: flex;
+
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 20px;
+    background: var(---primary);
+    transition: .3s ease;
+}
+
+.Mision:hover,
+.Vision:hover,
+.Politica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* TEXTOS */
+.Mision h2,
+.Vision h2,
+.Politica h2 {
+
+    font-size: 2rem;
+    color: var(---four);
+    min-width: 180px;
+}
+
+.Mision p,
+.Vision p,
+.Politica p {
+    flex: 1;
+    font-size: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* IMÁGENES */
+.Mision img,
+.Vision img,
+.Politica img {
+    width: 280px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    background: #dcdcdc;
+}
+
+/* ORDEN ESPECÍFICO */
+
+/* Mision = titulo | texto | imagen */
+.Mision h2 {
+    order: 1;
+}
+
+.Mision p {
+    order: 2;
+}
+
+.Mision img {
+    order: 3;
+}
+
+/* Vision = imagen | texto | titulo */
+.Vision img {
+    order: 1;
+}
+
+.Vision p {
+    order: 2;
+}
+
+.Vision h2 {
+    order: 3;
+}
+
+/* Politica = titulo | texto | imagen */
+.Politica h2 {
+    order: 1;
+}
+
+.Politica p {
+    order: 2;
+}
+
+.Politica img {
+    order: 3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .Mision,
+    .Vision,
+    .Politica {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .Mision h2,
+    .Vision h2,
+    .Politica h2,
+    .Mision p,
+    .Vision p,
+    .Politica p,
+    .Mision img,
+    .Vision img,
+    .Politica img {
+        order: unset;
+    }
+
+    .Mision img,
+    .Vision img,
+    .Politica img {
+        width: 100%;
+        max-width: 500px;
+        height: 280px;
+        object-fit: cover;
+    }
+}
+
+/*SERVICIOS*/
+
+.Servicio {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    position: relative;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+.Servicio::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+
+}
+
+.Regulacion {
+    background-image: url("regulaciones.jpg");
+}
+
+.Tramites {
+    background-image: url("tramites.jpg");
+}
+
+.contenidoServicio {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 900px;
+
+    padding: 60px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, .08);
+
+
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    color: var(---letter);
+}
+
+.contenidoServicio h2 {
+    font-size: 4rem;
+
+    margin-bottom: 25px;
+
+    color: var(---boton);
+}
+
+.contenidoServicio p,
+.contenidoServicio li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.contenidoServicio ul {
+    padding-left: 25px;
+    margin: 20px 0;
+}
+
+.btnServicio {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 12px 25px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    background: #00c853;
+    color: white;
+
+    transition: .3s;
+}
+
+.btnServicio:hover {
+    transform: translateY(-3px);
+
+    background: #00e676;
+}
+
+
+
+footer {
+    background-image: url("background-footer.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 70px 8% 30px;
+
+    color: var(---letter);
+}
+
+.footerContenedor {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+/* TITULOS */
+
+.Inf h2,
+.Certification h2 {
+    font-size: 2.5rem;
+
+    margin-bottom: 25px;
+
+    color: var(---three);
+}
+
+/* INFORMACIÓN */
+
+.Inf ul {
+    list-style: none;
+    padding: 0;
+}
+
+.Inf li {
+    margin-bottom: 15px;
+}
+
+.Inf a {
+    color: var(---letter);
+    text-decoration: none;
+}
+
+.telefono {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.telefono i {
+    color: var(---three);
+}
+
+/* CERTIFICADO */
+
+.Certification {
+    text-align: center;
+}
+
+.Certification img {
+    width: 100%;
+    max-width: 350px;
+
+    border-radius: 20px;
+}
+
+/* MAPA */
+
+.Maps {
+    display: flex;
+    justify-content: center;
+}
+
+.Maps iframe {
+    width: 100%;
+    max-width: 400px;
+
+    height: 350px;
+
+    border: none;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+}
+
+/* COPY */
+
+.Copy {
+    margin-top: 50px;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, .15);
+
+    text-align: center;
+}
+
+.Copy p {
+    color: #d1d1d1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px) {
+
+    .Servicio {
+        background-attachment: scroll;
+    }
+
+    .contenidoServicio {
+        padding: 35px 25px;
+    }
+
+    .contenidoServicio h2 {
+        font-size: 2.5rem;
+    }
+
+    .footerContenedor {
+        text-align: center;
+    }
+
+    .telefono {
+        justify-content: center;
+    }
+}
